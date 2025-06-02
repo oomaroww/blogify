@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blogife - Платформа для обмена моментами вашей жизни, опытом и историями через увлекательные посты в блоге.">
+    <meta name="keywords" content="блог, лайфстайл, делиться, сообщество, посты, истории, опыт, Blogife">
+    <meta name="author" content="Blogife Team">
+    <title>Blogife - Делитесь Моментами Своей Жизни</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-message {
+            color: #dc3545; /* Bootstrap danger color */
+            font-size: 0.875em;
+            margin-top: 0.25rem;
+            display: none; /* Скрыто по умолчанию */
+        }
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+        /* Пример использования SVG для иконки (если бы это была кастомная иконка) */
+        .svg-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor; /* Использует цвет текста родителя */
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-4" href="index.html">
+            <i class="fas fa-feather-alt me-2"></i>Blogife
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto" id="main-nav"> <li class="nav-item">
+                    <a class="nav-link active px-md-3 py-md-2" href="index.html"><i class="fas fa-home me-1"></i> Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="all-posts.html"><i class="fas fa-list-alt me-1"></i> Все посты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="categories.html"><i class="fas fa-th-large me-1"></i> Категории</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="write-post.html"><i class="fas fa-pencil-alt me-1"></i> Написать пост</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="profile.html"><i class="fas fa-user-circle me-1"></i> Профиль</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="login.html"><i class="fas fa-sign-in-alt me-1"></i> Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="register.html"><i class="fas fa-user-plus me-1"></i> Регистрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="contact.html"><i class="fas fa-envelope me-1"></i> Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+    <main class="container mt-4 mb-5"> <hr class="my-4">
+
+        <section id="welcome-section" class="py-5 text-center bg-primary-subtle rounded shadow-lg mb-5">
+            <div class="container">
+                <i class="fas fa-feather-alt fa-3x text-primary mb-3"></i>
+                <h1 class="display-3 fw-bold text-primary mb-3" id="welcome-section-header">Добро пожаловать в Blogife!</h1>
+                <p class="lead my-4 intro-text col-md-8 mx-auto">
+                    Это ваша новая платформа для обмена моментами вашей жизни, опытом и историями через увлекательные посты в блоге.
+                </p>
+                <p id="site-motto" class="fst-italic text-muted mb-4 fs-5"></p>
+                <div id="random-number-section" class="p-3 mb-4 bg-white rounded shadow-sm d-inline-block col-md-6 mx-auto">
+                    <p class="m-0">Загрузка случайного факта...</p>
+                </div>
+                <div>
+                    <button id="change-text-btn" class="btn btn-info btn-lg mt-2 shadow"><i class="fas fa-sync-alt me-2"></i>Изменить приветствие</button>
+                    <button id="change-link-btn" class="btn btn-secondary btn-lg mt-2 shadow ms-2"><i class="fas fa-link me-2"></i>Изменить ссылку</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-section" class="py-5 mb-5">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="section-title-custom">О Blogife</h2>
+                        <p class="lead text-muted">Blogife был рожден из идеи, что у каждого есть история, которую стоит рассказать.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="p-4 bg-white rounded shadow-sm h-100 text-center text-md-start about-card">
+                            <h3 class="text-primary mb-3"><i class="fas fa-bullseye fa-2x me-2 text-info"></i>Наша миссия</h3>
+                            <p>Дать людям удобную и вдохновляющую платформу для документирования своего опыта, увлечений и взглядов, способствуя созданию поддерживающего сообщества авторов.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="p-4 bg-white rounded shadow-sm h-100 text-center text-md-start about-card">
+                            <h3 class="text-primary mb-3"><i class="fas fa-eye fa-2x me-2 text-info"></i>Наше видение</h3>
+                            <p>Стать ведущей платформой для личных блогов, где каждый может легко делиться своими историями, находить единомышленников и где процветает творчество.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features-section" class="py-5 bg-light rounded mb-5 shadow-sm">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title-custom">Ключевые возможности</h2>
+                    <p class="lead text-muted">Откройте для себя инструменты, которые делают Blogife особенным.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-item text-center p-4 bg-white rounded shadow-sm h-100">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-edit fa-3x text-primary"></i>
+                            </div>
+                            <h4>Простой редактор</h4>
+                            <p class="text-muted">Интуитивно понятный интерфейс для создания и редактирования ваших публикаций.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-item text-center p-4 bg-white rounded shadow-sm h-100">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-users fa-3x text-primary"></i>
+                            </div>
+                            <h4>Сообщество</h4>
+                            <p class="text-muted">Взаимодействуйте с другими авторами, комментируйте и делитесь мнениями.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-item text-center p-4 bg-white rounded shadow-sm h-100">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-mobile-alt fa-3x text-primary"></i>
+                            </div>
+                            <h4>Адаптивность</h4>
+                            <p class="text-muted">Ваш блог будет отлично выглядеть на всех устройствах.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-item text-center p-4 bg-white rounded shadow-sm h-100">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-cogs fa-3x text-primary"></i>
+                            </div>
+                            <h4>Настройка</h4>
+                            <p class="text-muted">Персонализируйте свой профиль и внешний вид блога.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-item text-center p-4 bg-white rounded shadow-sm h-100">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-photo-video fa-3x text-primary"></i>
+                            </div>
+                            <h4>Мультимедиа</h4>
+                            <p class="text-muted">Легко добавляйте изображения и видео в свои посты.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                         <div class="feature-item text-center p-4 bg-white rounded shadow-sm h-100">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-shield-alt fa-3x text-primary"></i>
+                            </div>
+                            <h4>Конфиденциальность</h4>
+                            <p class="text-muted">Управляйте видимостью ваших постов и данных.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5 gx-lg-5">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="p-4 bg-white rounded shadow-sm h-100">
+                            <h3 class="text-info mb-3"><i class="fas fa-tags me-2"></i>Дополнительные преимущества</h3>
+                            <ul class="list-unstyled custom-benefit-list">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Категоризация и теги для удобной организации.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Контроль конфиденциальности ваших публикаций.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Регулярные обновления и новые функции.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-4 bg-white rounded shadow-sm h-100">
+                             <h3 class="text-info mb-3"><i class="fas fa-lightbulb me-2"></i>Скоро появятся</h3>
+                             <ul id="dynamic-feature-list" class="list-unstyled custom-benefit-list">
+                                 <li class="text-muted">Загрузка новых функций...</li>
+                             </ul>
+                             <p id="post-score-display" class="mt-3 text-center fw-bold fs-5"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <section id="javascript-demos" class="py-5 bg-light-subtle rounded shadow-sm mt-5">
+                    <div class="container">
+                        <div class="text-center mb-5">
+                            <h2 class="section-title-custom"><i class="fab fa-js-square me-2 text-warning"></i>Демонстрации JavaScript</h2>
+                            <p class="lead text-muted">Интерактивные примеры, реализованные с помощью JavaScript.</p>
+                        </div>
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-lg-6 col-md-8">
+                                <div class="card h-100 shadow-sm demo-card">
+                                    <div class="card-body text-center d-flex flex-column">
+                                        <h5 class="card-title text-primary mb-3"><i class="fas fa-dice me-2"></i>Случайное число и условия</h5>
+                                        <p class="card-text text-muted small mb-3">Сгенерируйте случайное число и посмотрите его свойства.</p>
+                                        <div id="random-number-result" class="p-3 bg-white border rounded mb-3 demo-display-area flex-grow-1">
+                                            </div>
+                                        <button id="generate-random-btn" class="btn btn-info btn-lg mt-auto"><i class="fas fa-random me-1"></i> Сгенерировать</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-8">
+                                <div class="card h-100 shadow-sm demo-card">
+                                    <div class="card-body text-center d-flex flex-column">
+                                        <h5 class="card-title text-primary mb-3"><i class="fas fa-balance-scale me-2"></i>Сравнение лайков (Логические операторы)</h5>
+                                        <p class="card-text text-muted small mb-3">Сравните лайки двух постов.</p>
+                                        <div class="mb-3">
+                                            <label for="postA-likes" class="form-label">Лайки Поста А:</label>
+                                            <input type="number" id="postA-likes" class="form-control" value="50">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="postB-likes" class="form-label">Лайки Поста Б:</label>
+                                            <input type="number" id="postB-likes" class="form-control" value="75">
+                                        </div>
+                                        <div id="comparison-result" class="p-3 bg-white border rounded mb-3 demo-display-area flex-grow-1">
+                                            </div>
+                                        <button id="compare-posts-btn" class="btn btn-warning btn-lg mt-auto"><i class="fas fa-exchange-alt me-1"></i> Сравнить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        </section>
+        
+        <section id="gallery-section">
+            <h2>Галерея</h2>
+            <p>Взгляните на то, что можно создать и найти на Blogife.</p>
+            <div class="image-gallery">
+                <img src="https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="Изображение поста о путешествии" loading="lazy">
+                <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="Изображение кулинарного блога" loading="lazy">
+                <img src="https://images.pexels.com/photos/4790610/pexels-photo-4790610.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="Изображение блога о хобби (рукоделие)" loading="lazy">
+            </div>
+        </section>
+        <hr>
+        <hr class="my-4"> 
+        <section id="featured-post-example" class="mb-5">
+            <h2 class="text-center mb-4">Взгляните на пример поста!</h2>
+            <div id="sample-post" class="card shadow-lg sample-post-card"> <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top sample-post-image" alt="Команда работает над проектом" loading="lazy">
+                
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-3">Пример поста: Мой первый день с Blogife</h3>
+                    <p class="card-text text-muted mb-3">
+                        <small><i class="fas fa-user me-1"></i> Автор: Новый Пользователь | <i class="fas fa-calendar-alt me-1"></i> Дата: 22.05.2025 | <i class="fas fa-tag me-1"></i> Категория: Личное</small>
+                    </p>
+                    <p class="card-text lead">Сегодня я начал использовать Blogife, и это было потрясающе! Интерфейс очень дружелюбный, и я уже опубликовал свою первую заметку. Платформа предлагает множество удобных инструментов для творчества и общения.</p>
+                    <p class="card-text">Мне особенно понравилась возможность легко добавлять изображения и форматировать текст. <em>Рекомендую всем, кто хочет делиться своими мыслями и историями!</em></p>
+                    
+                    <hr class="my-4">
+                    
+                    <h4 class="mb-3"><i class="fas fa-comments me-2"></i>Комментарии (<span id="sample-comment-count">2</span>)</h4>
+                    <div class="comments-section">
+                        <div class="comment-item mb-3">
+                            <div class="d-flex">
+                                <img src="https://i.pravatar.cc/40?u=user1_blogife" class="rounded-circle me-2 shadow-sm" alt="Аватар Пользователь1" style="width:40px; height:40px; border: 1px solid #ddd;" loading="lazy">
+                                <div class="flex-grow-1">
+                                    <strong>Пользователь1:</strong>
+                                    <p class="mb-1 bg-light p-2 rounded d-inline-block">Отличный пост! Очень рад видеть новые лица на платформе.</p>
+                                    <small class="text-muted ms-2"><i class="fas fa-clock fa-xs me-1"></i>1 час назад</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-item mb-3">
+                             <div class="d-flex">
+                                <img src="https://i.pravatar.cc/40?u=user2_blogife" class="rounded-circle me-2 shadow-sm" alt="Аватар Пользователь2" style="width:40px; height:40px; border: 1px solid #ddd;" loading="lazy">
+                                <div class="flex-grow-1">
+                                    <strong>Пользователь2:</strong>
+                                    <p class="mb-1 bg-light p-2 rounded d-inline-block">Добро пожаловать в сообщество Blogife! Удачи с блогом.</p>
+                                    <small class="text-muted ms-2"><i class="fas fa-clock fa-xs me-1"></i>45 минут назад</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <textarea class="form-control" rows="3" placeholder="Оставьте свой комментарий... (потребуется вход)"></textarea>
+                            <button class="btn btn-success mt-2"><i class="fas fa-paper-plane me-1"></i> Отправить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted bg-white">
+                    <i class="fas fa-heart text-danger me-1"></i> 15 Лайков &nbsp;&nbsp; <i class="fas fa-share-alt me-1"></i> 5 Репостов
+                </div>
+            </div>
+        </section>
+
+        <section id="api-integration-section" class="py-5 bg-light rounded mb-5 shadow-sm">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title-custom"><i class="fas fa-cloud-download-alt me-2 text-primary"></i>Загрузка данных с API</h2>
+                    <p class="lead text-muted">Нажмите кнопку, чтобы загрузить примеры постов с внешнего API.</p>
+                </div>
+                <div class="text-center mb-4">
+                    <button id="fetchPostsButton" class="btn btn-primary btn-lg shadow"><i class="fas fa-sync-alt me-2"></i>Загрузить посты с API</button>
+                </div>
+                <div id="apiPostsContainer" class="row row-cols-1 g-4">
+                    <p class="text-center text-muted">Нажмите кнопку выше, чтобы увидеть посты.</p>
+                </div>
+                <div id="apiErrorDisplay" class="alert alert-danger mt-4 d-none" role="alert">
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact-info">
+            <h6>Свяжитесь с нами</h6>
+            <p>Email: <a href="mailto:info@blogife.com">xchanze@protonmail.com</a></p>
+        </section>
+    </main>
+
+    <footer id="main-footer" class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2025 Blogife. Все права защищены.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="jquery-script.js"></script>
+</body>
+</html>

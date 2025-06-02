@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название Страницы - Blogife</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-4" href="index.html">
+            <i class="fas fa-feather-alt me-2"></i>Blogife
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="index.html"><i class="fas fa-home me-1"></i> Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="all-posts.html"><i class="fas fa-list-alt me-1"></i> Все посты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active px-md-3 py-md-2" href="categories.html"><i class="fas fa-th-large me-1"></i> Категории</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="write-post.html"><i class="fas fa-pencil-alt me-1"></i> Написать пост</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="profile.html"><i class="fas fa-user-circle me-1"></i> Профиль</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="login.html"><i class="fas fa-sign-in-alt me-1"></i> Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="register.html"><i class="fas fa-user-plus me-1"></i> Регистрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="contact.html"><i class="fas fa-envelope me-1"></i> Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    </header>
+    <main class="container mt-4 mb-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Категории Блогов</h1>
+        <p class="lead text-muted col-lg-8 mx-auto">Исследуйте наши посты, отсортированные по тематическим категориям. Найдите то, что интересно именно вам!</p>
+    </div>
+    <hr class="my-4">
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm category-card">
+                <div class="card-body text-center d-flex flex-column">
+                    <div class="category-icon mb-3">
+                        <i class="fas fa-laptop-code fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="card-title">Технологии</h4>
+                    <p class="card-text text-muted small flex-grow-1">Все о гаджетах, программировании, искусственном интеллекте и новейших технологических трендах.</p>
+                    <a href="all-posts.html?category=tech" class="btn btn-outline-primary mt-auto stretched-link">
+                        Перейти к постам <span class="badge bg-primary rounded-pill ms-2">14</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm category-card">
+                <div class="card-body text-center d-flex flex-column">
+                    <div class="category-icon mb-3">
+                        <i class="fas fa-map-marked-alt fa-3x text-success"></i>
+                    </div>
+                    <h4 class="card-title">Путешествия</h4>
+                    <p class="card-text text-muted small flex-grow-1">Истории из поездок, советы туристам, обзоры удивительных мест и культур разных стран.</p>
+                    <a href="all-posts.html?category=travel" class="btn btn-outline-success mt-auto stretched-link">
+                        Перейти к постам <span class="badge bg-success rounded-pill ms-2">8</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm category-card">
+                <div class="card-body text-center d-flex flex-column">
+                    <div class="category-icon mb-3">
+                        <i class="fas fa-utensils fa-3x text-danger"></i>
+                    </div>
+                    <h4 class="card-title">Кулинария</h4>
+                    <p class="card-text text-muted small flex-grow-1">Вкусные рецепты, кулинарные лайфхаки, обзоры ресторанов и гастрономические приключения.</p>
+                    <a href="all-posts.html?category=food" class="btn btn-outline-danger mt-auto stretched-link">
+                        Перейти к постам <span class="badge bg-danger rounded-pill ms-2">22</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm category-card">
+                <div class="card-body text-center d-flex flex-column">
+                    <div class="category-icon mb-3">
+                        <i class="fas fa-glass-cheers fa-3x text-warning"></i>
+                    </div>
+                    <h4 class="card-title">Лайфстайл</h4>
+                    <p class="card-text text-muted small flex-grow-1">Мысли о жизни, советы по саморазвитию, хобби, отношения и все, что делает нашу жизнь ярче.</p>
+                    <a href="all-posts.html?category=lifestyle" class="btn btn-outline-warning mt-auto stretched-link">
+                        Перейти к постам
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="jquery-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название Страницы - Blogife</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-4" href="index.html">
+            <i class="fas fa-feather-alt me-2"></i>Blogife
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="index.html"><i class="fas fa-home me-1"></i> Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="all-posts.html"><i class="fas fa-list-alt me-1"></i> Все посты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="categories.html"><i class="fas fa-th-large me-1"></i> Категории</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active px-md-3 py-md-2" href="write-post.html"><i class="fas fa-pencil-alt me-1"></i> Написать пост</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="profile.html"><i class="fas fa-user-circle me-1"></i> Профиль</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="login.html"><i class="fas fa-sign-in-alt me-1"></i> Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="register.html"><i class="fas fa-user-plus me-1"></i> Регистрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="contact.html"><i class="fas fa-envelope me-1"></i> Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    </header>
+    <article class="blog-post">
+    <h1 class="display-5 fw-bold">Заголовок Полного Поста</h1>
+    <p class="blog-post-meta text-muted">Опубликовано: 22 мая 2025, Автор: <a href="#">Имя Автора</a></p>
+    <hr>
+    <img src="https://via.placeholder.com/700x300.png?text=Full+Post+Image" class="img-fluid rounded mb-3" alt="Full Post Image">
+    
+    <p>Это основной текст вашего поста. Здесь вы можете подробно рассказать о своей теме. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <blockquote>
+        <p class="mb-0 fst-italic">"Это цитата внутри поста, которая может выделить важную мысль."</p>
+    </blockquote>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    
+    <h3>Подзаголовок в посте</h3>
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <ul>
+        <li>Пункт списка 1</li>
+        <li>Пункт списка 2</li>
+        <li>Пункт списка 3</li>
+    </ul>
+    <hr>
+</article>
+
+<section id="comments-section" class="mt-5">
+    <h3>Комментарии (<span id="comment-count">2</span>)</h3>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Пользователь1 <small class="text-muted"> - 1 час назад</small></h5>
+            <p class="card-text">Отличный пост! Очень информативно.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Пользователь2 <small class="text-muted"> - 30 минут назад</small></h5>
+            <p class="card-text">Спасибо за статью, узнал много нового.</p>
+        </div>
+    </div>
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">Оставить комментарий</h5>
+            <form>
+                <div class="mb-3">
+                    <label for="commentText" class="form-label">Ваш комментарий</label>
+                    <textarea class="form-control" id="commentText" rows="3" placeholder="Напишите что-нибудь... (для отправки нужна будет авторизация)"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <main class="container mt-4 mb-5">
+        <h1>Заголовок Страницы</h1>
+        <p>Это содержимое для страницы [Название Страницы]. Замените этот текст на реальный контент.</p>
+    </main>
+
+    <footer id="main-footer" class="bg-dark text-white mt-auto p-4 text-center">
+        <div class="container">
+            <p>&copy; 2025 Blogife. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="jquery-script.js"></script>
+</body>
+</html>

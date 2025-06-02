@@ -1,0 +1,987 @@
+/* ========= ОСНОВНЫЕ СБРОСЫ И НАСТРОЙКИ ========= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Управляет моделью блока, чтобы padding и border не увеличивали его видимый размер */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Стандартный, легко читаемый шрифт */
+    line-height: 1.65; /* Улучшает читаемость текста */
+    background-color: #f4f7f6; /* Очень светлый серо-зеленый фон для страницы */
+    color: #333333; /* Основной цвет текста (темно-серый) */
+}
+
+/* ========= КОНТЕЙНЕР ========= */
+.container {
+    width: 90%; /* Ширина основного контента */
+    max-width: 1100px; /* Максимальная ширина для больших экранов */
+    margin-left: auto; /* Центрирование */
+    margin-right: auto; /* Центрирование */
+    padding: 20px; /* Внутренние отступы */
+}
+
+#main-content.container { /* Отдельный стиль для основного контейнера, если нужно */
+    background-color: #ffffff; /* Белый фон для области основного контента */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Небольшое скругление углов */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Очень легкая тень */
+}
+
+/* ========= ШАПКА (HEADER) ========= */
+#main-header {
+    background-color: #2c3e50; /* Темно-сине-серый фон для шапки */
+    color: #ecf0f1; /* Светлый цвет текста для шапки */
+    padding: 15px 0; /* Отступы сверху/снизу */
+    text-align: center;
+}
+
+#main-header h1 {
+    font-size: 2.2em; /* Размер главного заголовка сайта */
+    margin-bottom: 10px; /* Отступ снизу от заголовка */
+    color: #ffffff;
+}
+
+/* Навигация в шапке */
+#main-nav ul {
+    list-style-type: none; /* Убираем маркеры списка */
+}
+
+#main-nav ul li {
+    display: inline; /* Пункты меню в одну строку */
+    margin: 0 12px; /* Отступы между пунктами меню */
+}
+
+#main-nav a {
+    color: #bdc3c7; /* Светло-серый цвет ссылок в навигации */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 1em;
+}
+
+#main-nav a:hover,
+#main-nav a:focus { /* Стиль при наведении и фокусе для доступности */
+    color: #ffffff; /* Белый цвет при наведении */
+    text-decoration: underline;
+}
+
+/* ========= ОСНОВНОЙ КОНТЕНТ (СЕКЦИИ, ЗАГОЛОВКИ, ПАРАГРАФЫ) ========= */
+section {
+    padding: 25px 0; /* Вертикальные отступы для секций */
+    margin-bottom: 15px; /* Отступ снизу */
+}
+
+/* Стили для заголовков */
+h2 {
+    font-size: 1.8em;
+    color: #2c3e50; /* Тот же цвет, что и шапка, для согласованности */
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e0e0e0; /* Тонкая линия под заголовком секции */
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #34495e; /* Более темный сине-серый */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 1.2em;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+h5 {
+    font-size: 1em;
+    color: #555555;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.9em;
+    color: #777777;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Стили для параграфов */
+p {
+    margin-bottom: 12px; /* Отступ снизу для параграфов */
+    color: #4a4a4a; /* Немного светлее основного текста для лучшего контраста с фоном */
+}
+
+.intro-text {
+    font-size: 1.1em;
+    color: #2d2d2d;
+    font-weight: normal; /* Убираем жирность из предыдущего примера для "базовости" */
+}
+
+/* Стили для списков */
+ul.feature-list, ol.benefit-list {
+    margin-left: 20px; /* Отступ слева для выравнивания с текстом */
+    margin-bottom: 15px;
+}
+
+ul.feature-list li, ol.benefit-list li {
+    margin-bottom: 7px;
+    color: #4a4a4a;
+}
+
+/* ========= ГАЛЕРЕЯ ИЗОБРАЖЕНИЙ ========= */
+.image-gallery {
+    display: flex; /* Располагаем изображения в ряд */
+    flex-wrap: wrap; /* Позволяем переноситься на новую строку */
+    gap: 15px; /* Пространство между изображениями */
+    margin-top: 15px;
+}
+
+.image-gallery img {
+    max-width: 100%; /* Изображения адаптивны, не выходят за родительский блок */
+    height: auto; /* Сохраняют пропорции */
+    display: block; /* Убирает лишний отступ под изображением */
+    border: 1px solid #dddddd; /* Тонкая серая рамка */
+    padding: 4px; /* Небольшой отступ внутри рамки */
+    background-color: #ffffff;
+    border-radius: 3px;
+    /* Для flex-элементов, чтобы они занимали доступное пространство */
+    flex: 1 1 200px; /* Позволяет изображениям расти и сжиматься, базовая ширина 200px */
+    object-fit: cover; /* Если изображения разного размера, это поможет их выровнять по высоте */
+    min-height: 150px; /* Минимальная высота для единообразия, если нужно */
+}
+
+/* ========= ПРОЧИЕ ЭЛЕМЕНТЫ ========= */
+hr.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: #cccccc;
+    margin: 25px 0;
+}
+
+.sample-post {
+    background-color: #f9f9f9; /* Очень светлый фон для выделения поста */
+    padding: 15px;
+    border: 1px solid #e7e7e7;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.comment {
+    font-size: 0.95em;
+    padding: 8px;
+    margin-top: 8px;
+    margin-left: 15px;
+    background-color: #e9ecef; /* Светло-серый фон для комментария */
+    border-left: 3px solid #adb5bd; /* Акцентная линия слева */
+    border-radius: 0 3px 3px 0;
+}
+
+#contact-info {
+    text-align: center;
+    padding: 15px;
+    background-color: #e9ecef;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+#contact-info a {
+    color: #0056b3; /* Стандартный синий для ссылок */
+}
+
+#contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========= ПОДВАЛ (FOOTER) ========= */
+#main-footer {
+    background-color: #343a40; /* Темно-серый фон для подвала */
+    color: #ced4da; /* Светло-серый текст */
+    padding: 25px 0;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#main-footer .footer-content p { /* Уточняем селектор для параграфа в подвале */
+    margin: 0;
+    color: #ced4da; /* Убедимся, что цвет текста в подвале правильный */
+    font-size: 0.9em;
+}
+
+/* ========= ABOUT PAGE - FLEXBOX & MEDIA QUERIES ========= */
+.about-flex-container {
+    display: flex; /* Enables flexbox */
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+    gap: 20px; /* Space between flex items */
+    background-color: #ffffff; /* */
+    padding: 20px;
+    border-radius: 8px; /* */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* */
+}
+
+.about-main-content {
+    flex: 2; /* Takes up 2/3 of the space */
+    min-width: 300px; /* Ensures content doesn't get too squished */
+}
+
+.about-sidebar {
+    flex: 1; /* Takes up 1/3 of the space */
+    min-width: 250px; /* Ensures sidebar content has enough space */
+    background-color: #f8f9fa; /* Light background for sidebar */
+    padding: 15px;
+    border-radius: 5px; /* */
+}
+
+.about-sidebar h4 {
+    margin-top: 0;
+    color: #343a40; /* */
+}
+
+.about-sidebar ul {
+    list-style-type: none; /* */
+    padding-left: 0;
+}
+
+.about-sidebar ul li {
+    margin-bottom: 10px; /* */
+    color: #495057;
+}
+
+.about-sidebar ul li i {
+    margin-right: 8px;
+    color: #007bff; /* Bootstrap primary blue */
+}
+
+/* Media Query for smaller screens - makes Flexbox items stack */
+@media (max-width: 768px) {
+    .about-flex-container {
+        flex-direction: column; /* Stacks items vertically */
+    }
+
+    .about-main-content,
+    .about-sidebar {
+        flex: 1 1 100%; /* Each item takes full width when stacked */
+    }
+}
+
+/* ========= SERVICES PAGE - CSS GRID ========= */
+.services-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
+    gap: 25px; /* Space between grid items */
+    margin-top: 30px; /* */
+}
+
+.service-card {
+    background-color: #ffffff; /* */
+    border: 1px solid #e0e0e0; /* */
+    border-radius: 8px; /* */
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.service-icon {
+    color: #2c3e50; /* */
+    margin-bottom: 15px; /* */
+}
+
+.service-card h3 {
+    margin-top: 0; /* */
+    margin-bottom: 10px; /* */
+    font-size: 1.4em; /* */
+    color: #343a40; /* */
+}
+
+.service-card p {
+    font-size: 0.95em; /* */
+    color: #555; /* */
+    line-height: 1.6; /* */
+}
+
+/* ========= CONTACT PAGE - BOOTSTRAP CUSTOMIZATIONS (Optional) ========= */
+#contact-us-section .card {
+    border: none; /* Remove default card border if desired */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#contact-us-section .form-label {
+    font-weight: 500;
+}
+
+#contact-us-section .btn-primary {
+    background-color: #2c3e50; /* Match your header color */
+    border-color: #2c3e50; /* Match your header color */
+}
+
+#contact-us-section .btn-primary:hover {
+    background-color: #1a252f;
+    border-color: #1a252f;
+}
+
+#contact-us-section .row.mt-5 h5 {
+    color: #343a40; /* */
+    margin-bottom: 10px; /* */
+}
+#contact-us-section .row.mt-5 p {
+    color: #495057;
+}
+/* === Улучшенные стили для навигационной панели === */
+
+/* Общие стили для всей панели внутри header */
+#main-header .navbar {
+    border-bottom: 3px solid #17a2b8; /* Цветная линия внизу панели (пример) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Более выраженная тень */
+    transition: padding 0.3s ease-in-out; /* Плавный переход для отступов, если они меняются */
+}
+
+/* Стили для бренда (названия сайта) */
+#main-header .navbar-brand {
+    font-weight: bold; /* Уже есть fs-4 из HTML, можно добавить еще стили */
+    letter-spacing: 0.5px; /* Небольшое расстояние между буквами */
+    transition: color 0.3s ease;
+}
+
+#main-header .navbar-brand .fa-feather-alt {
+    color: #17a2b8; /* Цвет иконки (можно выбрать любой) */
+    margin-right: 8px; /* Отступ иконки от текста */
+}
+
+#main-header .navbar-brand:hover {
+    color: #ffffff; /* Цвет бренда при наведении */
+}
+
+/* Стили для ссылок в навигации */
+#main-header .navbar-nav .nav-link {
+    font-size: 1rem; /* Размер шрифта для ссылок */
+    font-weight: 500; /* Средняя жирность */
+    text-transform: uppercase; /* Все буквы заглавные */
+    margin-left: 0.3rem; /* Небольшой отступ слева */
+    margin-right: 0.3rem; /* Небольшой отступ справа */
+    border-radius: 5px; /* Слегка скругленные углы для эффекта при наведении */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Плавные переходы */
+}
+
+/* Эффект при наведении на ссылки */
+#main-header .navbar-nav .nav-link:hover,
+#main-header .navbar-nav .nav-link:focus {
+    color: #ffffff !important; /* Цвет текста при наведении (важно для переопределения Bootstrap) */
+    background-color: rgba(255, 255, 255, 0.15); /* Полупрозрачный фон при наведении */
+    transform: translateY(-2px); /* Легкий сдвиг вверх при наведении */
+}
+
+/* Стиль для активной ссылки */
+#main-header .navbar-nav .nav-link.active {
+    color: #ffffff !important; /* Цвет активной ссылки */
+    background-color: rgba(23, 162, 184, 0.7); /* Более выраженный фон для активной ссылки (цвет #17a2b8 с прозрачностью) */
+    font-weight: bold;
+}
+
+/* Улучшение вида кнопки "гамбургера" на мобильных */
+#main-header .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+#main-header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Отступы для пунктов меню в выпадающем списке на мобильных */
+@media (max-width: 991.98px) { /* Точка останова Bootstrap для lg */
+    #main-header .navbar-nav .nav-item {
+        margin-bottom: 0.5rem; /* Добавляем отступ между пунктами в мобильном меню */
+    }
+    #main-header .navbar-nav .nav-link {
+        padding-left: 1rem; /* Добавляем внутренний отступ для выравнивания текста */
+        padding-right: 1rem;
+    }
+     #main-header .navbar-nav .nav-link:hover,
+     #main-header .navbar-nav .nav-link:focus,
+     #main-header .navbar-nav .nav-link.active {
+        transform: none; /* Убираем сдвиг на мобильных для выпадающего списка */
+    }
+}
+/* Улучшенные стили для секции практики с DOM */
+#dom-practice-section {
+    background-color: #f0f2f5; /* Очень светлый фон для всей секции */
+    border-radius: 0.75rem; /* Более скругленные углы */
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1); /* Более заметная тень */
+}
+
+.dom-task-block {
+    background-color: #ffffff; /* Белый фон для каждого блока задач */
+    margin-bottom: 1.75rem !important; /* Увеличим отступ между блоками */
+    box-shadow: 0 0.125rem 0.35rem rgba(0, 0, 0, 0.075); /* Легкая тень для блоков */
+    border-radius: 0.5rem; /* Скругление углов блоков */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.dom-task-block:hover {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* Тень при наведении на блок */
+}
+
+.dom-task-block h5.text-muted {
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 0.75rem;
+    font-size: 1.1rem; /* Чуть крупнее подзаголовок */
+}
+
+.dom-task-block h5.text-muted .badge {
+    font-size: 0.8em; /* Размер значка с номером задачи */
+    vertical-align: middle;
+}
+
+/* Стили для элементов из Задачи 2 */
+#style-target-id {
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+    text-align: center;
+}
+#style-target-id:hover {
+    transform: scale(1.02); /* Небольшое увеличение при наведении */
+}
+
+
+.style-target-class {
+    transition: font-size 0.4s ease, color 0.4s ease, letter-spacing 0.4s ease;
+}
+
+#toggle-image {
+    border: 3px solid transparent;
+    transition: opacity 0.5s ease, border-color 0.4s ease, transform 0.3s ease;
+}
+#toggle-image:hover {
+    border-color: #0d6efd; /* Bootstrap primary color */
+    transform: scale(1.03);
+}
+
+#toggle-section {
+    transition: opacity 0.5s ease, max-height 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), padding 0.3s ease, margin 0.3s ease; /* Плавный переход для скрытия/показа */
+    overflow: hidden;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Стили для Задачи 3 */
+#text-content-target {
+    transition: background-color 0.4s ease, color 0.4s ease, padding 0.3s ease, letter-spacing 0.3s ease;
+    font-weight: 500; /* Немного жирнее */
+}
+
+/* Стили для Задачи 4 */
+#attribute-image {
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+#attribute-image:hover {
+    transform: scale(1.08); /* Увеличение при наведении */
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+#attribute-link {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+#attribute-link:hover {
+    transform: translateY(-2px); /* Легкий сдвиг вверх */
+}
+#attribute-link small {
+    font-size: 0.75em;
+    display: block;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+
+/* Общие стили для кнопок в секции и статус-бара */
+#dom-practice-section .btn {
+    padding: 0.5rem 1rem; /* Увеличим немного кнопки */
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+#dom-practice-section .btn:hover {
+    transform: translateY(-1px); /* Небольшой сдвиг кнопки при наведении */
+}
+#dom-practice-section .btn:active {
+    transform: translateY(0px); /* Возврат при нажатии */
+}
+
+
+#hover-status {
+    font-size: 1em; /* Крупнее текст статуса */
+    font-weight: 500;
+    min-height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.image-gallery img {
+    max-width: 100%; /* Уже должно быть для адаптивности */
+    height: 200px;   /* Задать фиксированную высоту для единообразия */
+    object-fit: cover; /* Гарантирует, что изображение покроет область, сохранив пропорции (может обрезать) */
+    border: 1px solid #dddddd;
+    padding: 4px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    flex: 1 1 300px; /* Базовая ширина для flex-элементов, можно изменить */
+    /* min-height: 150px;  - Если вы использовали min-height, убедитесь, что он сочетается с height */
+}
+
+/* Улучшенные стили для секции практики с DOM */
+#dom-practice-section {
+    background-color: #e9ecef; /* Немного темнее фон для всей секции */
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.05); /* Мягкая тень */
+    padding-top: 2rem !important; /* Больше верхнего отступа */
+    padding-bottom: 1rem !important; /* Меньше нижнего, т.к. у последнего блока свой отступ */
+}
+
+.dom-task-block {
+    background-color: #ffffff;
+    margin-bottom: 2rem !important; /* Увеличенный отступ между блоками */
+    box-shadow: 0 0.15rem 0.45rem rgba(0, 0, 0, 0.08);
+    border-radius: 0.5rem;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.dom-task-block:hover {
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.12);
+}
+
+.dom-task-header {
+    color: #343a40; /* Темный цвет для заголовка задачи */
+    border-bottom: 2px solid #dee2e6; /* Более выраженная линия */
+    padding-bottom: 0.85rem;
+    margin-bottom: 1.25rem !important; /* Отступ под заголовком */
+    font-size: 1.15rem;
+    font-weight: 500; /* Средняя жирность */
+}
+
+.dom-task-header .badge {
+    font-size: 0.85em;
+    padding: 0.4em 0.6em; /* Немного больше padding у badge */
+}
+
+/* Стили для элементов из Задачи 2 */
+#style-target-id {
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+}
+#style-target-id:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.style-target-class.lead { /* Стили для первого p.style-target-class */
+    font-weight: 400 !important; /* Bootstrap 'lead' делает его жирнее, можно переопределить */
+    color: #212529;
+}
+.style-target-class.text-muted { /* Стили для второго p.style-target-class */
+    font-size: 0.95rem;
+}
+
+#toggle-image {
+    border: 3px solid transparent;
+    transition: opacity 0.5s ease, border-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+#toggle-image:hover {
+    border-color: #007bff;
+    transform: scale(1.03);
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
+}
+
+.border-dashed { /* Класс для пунктирной рамки, если нужен */
+    border-style: dashed !important;
+    border-color: #adb5bd !important; /* Цвет рамки */
+}
+#toggle-section {
+    transition: opacity 0.5s ease, max-height 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), padding 0.3s ease, margin 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    font-style: italic;
+    color: #495057;
+}
+
+
+/* Стили для Задачи 3 */
+#text-content-target {
+    transition: background-color 0.4s ease, color 0.4s ease, padding 0.3s ease, letter-spacing 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Внутренняя тень */
+}
+
+/* Стили для Задачи 4 */
+.attribute-image-styled { /* Используем класс вместо прямого ID для стилей */
+    border: 4px solid #dc3545;
+    border-radius: 8px;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.attribute-image-styled:hover {
+    transform: scale(1.08) rotate(2deg); /* Небольшой поворот при наведении */
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.attribute-link-styled small { /* Стили для маленького текста в ссылке */
+    font-size: 0.75em;
+    display: block;
+    color: #6c757d;
+    margin-top: 0.25rem;
+    font-weight: 400; /* Обычный шрифт для <small> */
+}
+
+
+/* Общие стили для кнопок в секции и статус-бара */
+#dom-practice-section .btn {
+    font-weight: 500;
+    letter-spacing: 0.5px; /* Небольшое расстояние между буквами */
+    transition: all 0.2s ease-in-out; /* Общий плавный переход для кнопок */
+}
+#dom-practice-section .btn:hover {
+    transform: translateY(-2px); /* Сдвиг кнопки при наведении */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Тень при наведении */
+}
+#dom-practice-section .btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#hover-status {
+    font-size: 1em;
+    font-weight: 500;
+    min-height: 3.5em; /* Немного больше высоты */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+    color: #343a40;
+}
+
+/* styles.css - Стили для страницы создания поста */
+
+.write-post-card .card-header-custom, /* Если вы захотите кастомный класс для заголовка */
+.write-post-card .card-header { /* Стили для текущего заголовка карточки */
+    border-bottom: none; /* Убираем стандартную линию, если фон цветной */
+}
+
+.write-post-card .card-title-custom { /* Стили для кастомного заголовка, если используется */
+    font-weight: 300; /* Более легкий шрифт для заголовка */
+}
+
+.write-post-card .form-label {
+    font-weight: 500; /* Делаем лейблы немного жирнее */
+    color: #495057; /* Цвет для лейблов */
+}
+
+.write-post-card .form-control-lg,
+.write-post-card .form-select-lg {
+    padding: 0.75rem 1.25rem; /* Увеличиваем внутренние отступы полей */
+    font-size: 1.1rem; /* Увеличиваем шрифт в полях */
+}
+
+.write-post-card #postContent {
+    line-height: 1.7; /* Улучшаем читаемость в текстовом редакторе */
+    font-family: 'Georgia', serif; /* Можно использовать шрифт с засечками для основного текста */
+    min-height: 250px; /* Минимальная высота текстового поля */
+}
+
+.write-post-card .form-text a {
+    text-decoration: none; /* Убираем подчеркивание у ссылки на Markdown */
+}
+.write-post-card .form-text a:hover {
+    text-decoration: underline; /* Показываем подчеркивание при наведении */
+}
+
+.write-post-card .btn-lg {
+    padding: 0.65rem 1.5rem; /* Кастомные отступы для больших кнопок */
+    font-size: 1.05rem; /* Размер шрифта кнопок */
+    letter-spacing: 0.5px;
+}
+
+.write-post-card .bg-light.border.rounded { /* Стили для блока загрузки изображения */
+    background-color: #f8f9fa !important; /* Переопределяем Bootstrap bg-light, если нужно */
+}
+
+/* Добавляем немного "воздуха" вокруг обязательной звездочки */
+.form-label .text-danger {
+    margin-left: 2px;
+    font-weight: normal; /* Звездочка не должна быть жирной, если сам лейбл жирный */
+}
+
+/* styles.css - Стили для примера поста */
+
+#featured-post-example h2 { /* Заголовок секции "Взгляните на пример поста!" */
+    font-weight: 300; /* Более легкий шрифт */
+    color: #343a40;
+}
+
+.sample-post-card { /* Карточка примера поста */
+    border: none; /* Убираем стандартную рамку, так как есть тень */
+    border-radius: 0.75rem; /* Более скругленные углы */
+}
+
+.sample-post-image { /* Изображение вверху карточки поста */
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    max-height: 400px; /* Ограничиваем высоту изображения */
+    object-fit: cover; /* Изображение будет покрывать область, сохраняя пропорции */
+}
+
+.sample-post-card .card-title { /* Заголовок поста */
+    font-size: 2rem; /* Крупнее заголовок */
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.sample-post-card .card-text.lead { /* Вводный абзац */
+    font-size: 1.15rem;
+    color: #495057;
+    margin-bottom: 1.25rem;
+}
+
+.sample-post-card .card-text { /* Основной текст поста */
+    color: #343a40;
+    line-height: 1.7;
+}
+
+.sample-post-card .text-muted small { /* Мета-информация (автор, дата) */
+    font-size: 0.85em;
+}
+.sample-post-card .text-muted small i {
+    color: #6c757d; /* Цвет иконок в мета-информации */
+}
+
+.sample-post-card .comments-section h4 { /* Заголовок "Комментарии" */
+    font-size: 1.5rem;
+    color: #34495e;
+    font-weight: 500;
+}
+
+.comment-item .flex-grow-1 strong { /* Имя пользователя в комментарии */
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #0d6efd; /* Синий цвет для имени пользователя */
+}
+
+.comment-item .bg-light { /* Фон для текста комментария */
+    background-color: #f8f9fa !important; /* Bootstrap bg-light */
+    border-radius: 0.5rem;
+    display: inline-block; /* Чтобы фон был только вокруг текста */
+}
+.comment-item small.text-muted {
+    font-size: 0.8rem; /* Меньше шрифт для времени комментария */
+}
+
+.sample-post-card .card-footer {
+    font-size: 0.9rem;
+    border-top: 1px solid #e9ecef; /* Разделительная линия для футера карточки */
+}
+.sample-post-card .card-footer i {
+    margin-right: 0.25rem;
+}
+
+/* styles.css - Улучшения для главной страницы */
+
+/* Общий стиль для заголовков секций */
+.section-title-custom {
+    font-weight: 300; /* Более легкий шрифт */
+    color: #2c3e50; /* Темно-сине-серый */
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #0d6efd; /* Bootstrap primary blue */
+    display: inline-block; /* Чтобы линия была по ширине текста */
+    letter-spacing: 0.5px;
+}
+
+/* Welcome Section */
+#welcome-section.bg-primary-subtle {
+    color: #052c65; /* Темно-синий текст для контраста со светло-синим фоном */
+}
+#welcome-section .display-3 {
+    color: #0a58ca !important; /* Яркий синий для главного заголовка */
+}
+#welcome-section .lead.intro-text {
+    color: #212529; /* Стандартный темный текст для читаемости */
+    font-size: 1.2rem; /* Немного крупнее */
+}
+#welcome-section #random-number-section {
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    min-height: 80px; /* Чтобы блок не "прыгал" при загрузке JS */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#welcome-section .btn-lg {
+    padding: 0.75rem 1.5rem;
+}
+
+/* About Section */
+#about-section .about-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #17a2b8; /* Акцентная линия слева (бирюзовый) */
+}
+#about-section .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.1) !important;
+}
+#about-section .about-card h3 {
+    font-weight: 500;
+    color: #34495e !important; /* Темно-сине-серый для заголовков карточек */
+}
+#about-section .about-card h3 i {
+    color: #17a2b8; /* Бирюзовый для иконок */
+    font-size: 0.9em; /* Немного меньше иконка относительно текста H3 */
+}
+#about-section .about-card p {
+    color: #495057; /* Приглушенный текст */
+}
+
+
+/* Features Section */
+#features-section.bg-light {
+    padding-top: 3rem !important; /* Больше отступа сверху */
+    padding-bottom: 3rem !important; /* Больше отступа снизу */
+}
+.feature-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid transparent; /* Для эффекта при наведении */
+}
+.feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.12) !important;
+    border-top-color: #0d6efd; /* Синяя линия сверху при наведении */
+}
+.feature-icon {
+    display: inline-block;
+    background-color: #e6f2ff; /* Очень светлый синий фон для иконки */
+    border-radius: 50%;
+    padding: 15px;
+    margin-bottom: 1rem;
+    line-height: 1; /* Для корректного отображения иконки */
+    width: 70px; /* Фиксированный размер круга */
+    height: 70px; /* Фиксированный размер круга */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.feature-item i.fa-3x {
+    color: #0d6efd !important; /* Bootstrap primary blue */
+}
+.feature-item h4 {
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: #343a40;
+}
+
+.custom-benefit-list {
+    padding-left: 0; /* Убираем стандартный отступ у списка */
+}
+.custom-benefit-list li {
+    padding: 0.6rem 0;
+    font-size: 1.05rem;
+    color: #495057;
+    display: flex; /* Для выравнивания иконки и текста */
+    align-items: center;
+}
+.custom-benefit-list li i.me-2 {
+    font-size: 1.2em; /* Иконки галочек чуть крупнее */
+    width: 25px; /* Для выравнивания */
+}
+.dynamic-feature-list li::before {
+    content: "💡 "; /* Другой маркер для динамически добавляемых элементов */
+    font-weight: bold;
+    color: #ffc107; /* Желтый цвет для "лампочки" */
+}
+
+/* Стилизация блока с демо-элементами JS */
+.array-demo-section h5 {
+    font-size: 1rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+.array-display {
+    min-height: 60px; /* Чтобы было видно поле, даже если оно пустое */
+    background-color: #fff; /* Белый фон для контраста */
+}
+.index_A\.html .min-vh-10 { /* Если используется Bootstrap 5.3+ для вертикальной высоты */
+    min-height: 10vh !important;
+}
+
+/* styles.css - Стили для страницы регистрации */
+
+
+
+.register-card {
+    border-radius: 0.75rem; /* Более скругленные углы для карточки */
+}
+
+.register-card .card-header {
+    border-top-left-radius: 0.75rem; /* Скругление верхних углов заголовка карточки */
+    border-top-right-radius: 0.75rem;
+}
+
+.register-card .card-header .h2 { /* Если используете h2 внутри */
+    font-weight: 300; /* Более легкий шрифт для заголовка */
+}
+
+.register-card .form-label {
+    font-weight: 500; /* Средняя жирность для лейблов */
+    color: #495057;
+    margin-bottom: 0.3rem; /* Немного уменьшить отступ под лейблом */
+}
+
+.register-card .input-group .input-group-text {
+    background-color: #e9ecef; /* Фон для иконок в полях ввода */
+    border-right: none; /* Убираем правую рамку у блока с иконкой */
+    padding: 0.5rem 0.75rem; /* Отступы для иконок */
+}
+.register-card .input-group .form-control-lg {
+    border-left: none; /* Убираем левую рамку у поля ввода, чтобы оно сливалось с иконкой */
+    padding-left: 0.75rem;
+}
+.register-card .input-group .form-control-lg:focus {
+    box-shadow: none; /* Убираем стандартную тень при фокусе Bootstrap */
+    border-color: #28a745; /* Цвет рамки при фокусе (зеленый) */
+}
+.register-card .input-group .input-group-text i {
+    color: #6c757d; /* Цвет иконок */
+    width: 1.25em; /* Чтобы иконки были примерно одинаковой ширины */
+    text-align: center;
+}
+
+.register-card .form-check-label {
+    font-size: 0.95rem;
+}
+
+.register-card .btn-success {
+    /* background-color: #20c997; */ /* Пример другого оттенка зеленого */
+    /* border-color: #20c997; */
+    padding: 0.75rem 1.5rem; /* Отступы для кнопки */
+    letter-spacing: 0.5px; /* Расстояние между буквами */
+}
+
+.register-card hr {
+    border-top-color: #dee2e6; /* Цвет разделительной линии */
+}
+
+.register-card .text-muted a:hover {
+    color: #198754 !important; /* Более темный зеленый при наведении на ссылку "Войдите!" */
+    text-decoration: underline !important;
+}
+

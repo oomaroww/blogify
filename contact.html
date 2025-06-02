@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogife - Контакты</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-message {
+            color: #dc3545; /* Bootstrap danger color */
+            font-size: 0.875em;
+            margin-top: 0.25rem;
+            display: none; /* Скрыто по умолчанию */
+        }
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-4" href="index.html">
+            <i class="fas fa-feather-alt me-2"></i>Blogife
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="index.html"><i class="fas fa-home me-1"></i> Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active px-md-3 py-md-2" href="all-posts.html"><i class="fas fa-list-alt me-1"></i> Все посты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="categories.html"><i class="fas fa-th-large me-1"></i> Категории</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="write-post.html"><i class="fas fa-pencil-alt me-1"></i> Написать пост</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="profile.html"><i class="fas fa-user-circle me-1"></i> Профиль</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="login.html"><i class="fas fa-sign-in-alt me-1"></i> Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="register.html"><i class="fas fa-user-plus me-1"></i> Регистрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-3 py-md-2" href="contact.html"><i class="fas fa-envelope me-1"></i> Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+    <main class="container py-5">
+        <h2 class="mb-4 text-center">Свяжитесь с нами</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-sm p-4">
+                    <div class="card-body">
+                        <form id="contactForm" novalidate>
+                            <div class="mb-3">
+                                <label for="contact-name" class="form-label">Ваше имя:</label>
+                                <input type="text" class="form-control" id="contact-name" name="name" required minlength="3" pattern="[А-Яа-яA-Za-z\s\-]+" title="Только буквы, пробелы и дефисы">
+                                <div id="name-error" class="error-message">Пожалуйста, введите корректное имя (минимум 3 символа, только буквы).</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-email" class="form-label">Ваш Email:</label>
+                                <input type="email" class="form-control" id="contact-email" name="email" required>
+                                <div id="email-error" class="error-message">Пожалуйста, введите корректный Email адрес.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-message" class="form-label">Сообщение:</label>
+                                <textarea class="form-control" id="contact-message" name="message" rows="5" required minlength="10"></textarea>
+                                <div id="message-error" class="error-message">Сообщение должно быть не менее 10 символов.</div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Отправить сообщение</button>
+                            </div>
+                            <div id="form-feedback" class="mt-3 text-center d-none"></div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer" class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="m-0">&copy; 2025 Blogife. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script-contact.js"></script>
+    <script src="jquery-script.js"></script>
+</body>
+</html>

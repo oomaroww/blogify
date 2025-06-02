@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль Пользователя - Blogife</title> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-4" href="index.html">
+                    <i class="fas fa-feather-alt me-2"></i>Blogife
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3 py-md-2" href="index.html"><i class="fas fa-home me-1"></i> Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3 py-md-2" href="all-posts.html"><i class="fas fa-list-alt me-1"></i> Все посты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3 py-md-2" href="categories.html"><i class="fas fa-th-large me-1"></i> Категории</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3 py-md-2" href="write-post.html"><i class="fas fa-pencil-alt me-1"></i> Написать пост</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active px-md-3 py-md-2" href="profile.html"><i class="fas fa-user-circle me-1"></i> Профиль</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3 py-md-2" href="login.html"><i class="fas fa-sign-in-alt me-1"></i> Вход</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3 py-md-2" href="register.html"><i class="fas fa-user-plus me-1"></i> Регистрация</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3 py-md-2" href="contact.html"><i class="fas fa-envelope me-1"></i> Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4 mb-5">
+    <div class="profile-header text-center mb-4">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/2025-bmw-m5-118-67b6198412889.jpg?crop=0.524xw:0.441xh;0.359xw,0.380xh&resize=1200:*" id="profile-avatar" class="img-thumbnail rounded-circle mb-3 shadow-sm" alt="Аватар пользователя - BMW" style="width: 150px; height: 150px; object-fit: contain; background-color: #fff; padding: 5px;">
+        <h1 class="display-5"><span id="username-placeholder">Sanzhar Omarov</span></h1>
+        <p class="lead text-muted"><span id="userEmail-placeholder">bmw@kz</span></p>
+        <button class="btn btn-outline-primary btn-sm"><i class="fas fa-camera me-1"></i> Изменить фото</button>
+    </div>
+    <hr class="my-4">
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="list-group profile-nav-aside mb-4 shadow-sm">
+                <a href="#my-posts" class="list-group-item list-group-item-action active" data-bs-toggle="tab" role="tab" aria-controls="my-posts" aria-selected="true"><i class="fas fa-file-alt me-2"></i>Мои посты</a>
+                <a href="#my-comments" class="list-group-item list-group-item-action" data-bs-toggle="tab" role="tab" aria-controls="my-comments" aria-selected="false"><i class="fas fa-comments me-2"></i>Мои комментарии</a>
+                <a href="#settings" class="list-group-item list-group-item-action" data-bs-toggle="tab" role="tab" aria-controls="settings" aria-selected="false"><i class="fas fa-cog me-2"></i>Настройки</a>
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+            <div class="tab-content" id="profileTabContent">
+                <div class="tab-pane fade show active" id="my-posts" role="tabpanel" aria-labelledby="my-posts-tab-button">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white py-3">
+                            <h4 class="mb-0">Опубликованные посты</h4>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="post-page-template.html" class="list-group-item list-group-item-action py-3">
+                                <div class="row g-3 align-items-center">
+                                    <div class="col-auto">
+                                        <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" alt="Ноутбук с кодом" class="rounded" style="width: 100px; height: 75px; object-fit: cover;">
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">Погружение в мир JavaScript: Основы и первые шаги</h5>
+                                            <small class="text-muted">5 дней назад</small>
+                                        </div>
+                                        <p class="mb-1 text-muted-small">Эта статья поможет новичкам понять ключевые концепции JavaScript и написать свой первый рабочий код. Разберем переменные, функции и циклы!</p>
+                                        <small class="text-primary fw-medium"><i class="fas fa-tag fa-sm me-1"></i>Категория: Технологии</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="post-page-template.html" class="list-group-item list-group-item-action py-3">
+                                <div class="row g-3 align-items-center">
+                                    <div class="col-auto">
+                                        <img src="https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" alt="Горный пейзаж" class="rounded" style="width: 100px; height: 75px; object-fit: cover;">
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">Секретные тропы Альп: Путешествие для души</h5>
+                                            <small class="text-muted">2 недели назад</small>
+                                        </div>
+                                        <p class="mb-1 text-muted-small">Откройте для себя неизведанные маршруты альпийских гор. Делюсь впечатлениями, фотографиями и полезными советами для вашего следующего приключения.</p>
+                                        <small class="text-primary fw-medium"><i class="fas fa-tag fa-sm me-1"></i>Категория: Путешествия</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="post-page-template.html" class="list-group-item list-group-item-action py-3">
+                                 <div class="row g-3 align-items-center">
+                                    <div class="col-auto">
+                                        <img src="https://via.placeholder.com/100x75.png/6f42c1/fff?text=BMW+M5" alt="Эскиз автомобиля" class="rounded" style="width: 100px; height: 75px; object-fit: cover;">
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">Новый BMW M5: Обзор и первые впечатления</h5>
+                                            <small class="text-muted">1 месяц назад</small>
+                                        </div>
+                                        <p class="mb-1 text-muted-small">Подробный разбор характеристик, дизайна и ощущений от вождения последнего поколения легендарного седана. Стоит ли он своих денег?</p>
+                                        <small class="text-primary fw-medium"><i class="fas fa-tag fa-sm me-1"></i>Категория: Автомобили</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-group-item text-center p-3">
+                                <p class="text-muted mb-0">Больше постов не найдено.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="my-comments" role="tabpanel" aria-labelledby="my-comments-tab-button">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white py-3">
+                            <h4 class="mb-0">Оставленные комментарии</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="comment-item mb-3 pb-3 border-bottom">
+                                <p class="mb-1">"Это мой комментарий к <a href='post-page-template.html' class="text-decoration-none">посту о технологиях</a>."</p>
+                                <small class="text-muted"><i class="fas fa-clock fa-sm me-1"></i>2 дня назад</small>
+                            </div>
+                            <div class="comment-item mb-3 pb-3 border-bottom">
+                                <p class="mb-1">"Согласен с предыдущим оратором по поводу <a href='post-page-template.html' class="text-decoration-none">статьи о кулинарии</a>!"</p>
+                                <small class="text-muted"><i class="fas fa-clock fa-sm me-1"></i>5 дней назад</small>
+                            </div>
+                            <p class="text-muted text-center mt-3">Больше комментариев не найдено.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab-button">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white py-3">
+                            <h4 class="mb-0">Настройки профиля</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="profileDisplayName" class="form-label">Отображаемое имя</label>
+                                    <input type="text" class="form-control" id="profileDisplayName" value="Sanzhar Omarov">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profileEmail" class="form-label">Email (нельзя изменить)</label>
+                                    <input type="email" class="form-control" id="profileEmail" value="bmw@kz" disabled readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profileBio" class="form-label">О себе (краткая биография)</label>
+                                    <textarea class="form-control" id="profileBio" rows="3" placeholder="Расскажите немного о себе..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-save me-1"></i> Сохранить изменения</button>
+                            </form>
+                            <hr class="my-4">
+                            <h5 class="mb-3">Изменить пароль</h5>
+                            <form>
+                                 <div class="mb-3">
+                                    <label for="currentPassword" class="form-label">Текущий пароль</label>
+                                    <input type="password" class="form-control" id="currentPassword" placeholder="Введите текущий пароль">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newPassword" class="form-label">Новый пароль</label>
+                                    <input type="password" class="form-control" id="newPassword" placeholder="Введите новый пароль">
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="confirmNewPassword" class="form-label">Подтвердите новый пароль</label>
+                                    <input type="password" class="form-control" id="confirmNewPassword" placeholder="Повторите новый пароль">
+                                </div>
+                                <button type="submit" class="btn btn-warning"><i class="fas fa-key me-1"></i> Изменить пароль</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+    <footer id="main-footer" class="bg-dark text-white mt-auto p-4 text-center">
+        </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="jquery-script.js"></script>
+</body>
+</html>
