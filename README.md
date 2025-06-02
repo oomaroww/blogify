@@ -4,19 +4,22 @@
 Blogife is a modern blog platform allowing users to publish articles, read posts, leave comments, and explore content by category. This project is developed as a demonstration of HTML, CSS, and JavaScript skills, including the use of the jQuery library and integration with external APIs.
 
 ## Demonstration (Screenshots)
-You can add screenshots of your website in action here.
 
 ### Home Page
-![Blogife Home Page](assets/images/main-page.png)
-*A brief description of what is shown in the home page screenshot.*
+![image](https://github.com/user-attachments/assets/cc15ca3f-f62e-4791-af55-45e13dfb1de2)
+![image](https://github.com/user-attachments/assets/1d854b8a-5fac-4420-ac0e-17751898cce0)
+![image](https://github.com/user-attachments/assets/b675fc34-8c86-4537-b613-f9187e50d854)
+
+
 
 ### Contact Page with Validation
-![Contact Page with Validation](assets/images/contact-page.png)
-*Demonstration of the contact form's functionality and error messages.*
+![image](https://github.com/user-attachments/assets/d1861f0c-7c0a-4666-8a86-f378f0c1a0a8)
 
 ### Interactive Elements
-![Interactive Elements JS and jQuery](assets/images/interactive-elements.png)
-*Show examples of JS and jQuery element functionality, such as dynamic tag addition or API post loading.*
+![image](https://github.com/user-attachments/assets/26d5abdc-ba3a-4f22-8147-8aedb35f6ffa)
+![image](https://github.com/user-attachments/assets/66152d18-cc7a-439f-aa79-20422edcdf7d)
+
+
 
 ## Functionality
 -   **Home Page:** Displays recent and popular posts, and includes interactive JavaScript and jQuery demonstrations.
@@ -31,36 +34,49 @@ You can add screenshots of your website in action here.
 ## Project Structure
 
 your_project/
-├── index.html                  # Main page
+├── index.html                  
 
-├── all-posts.html              # All posts page
+├── all-posts.html 
 
-├── post-page.html              # Single post page template
+├── post-page.html              
 
-├── login-register.html         # Login and registration page
+├── login-register.html         
 
-├── categories.html             # Categories page
+├── categories.html             
 
-├── contact.html                # Contact page with form validation
+├── contact.html                
 
-├── write-post.html             # Page for writing a new post (placeholder)
+├── write-post.html             
 
-├── profile.html                # User profile page (placeholder)
+├── profile.html                
 
 ├── css/
-│   └── styles.css              # Main project styles
+│   
+└── styles.css              
 
 ├── js/
-│   ├── script.js               # Main JavaScript code (Vanilla JS, API)
-│   ├── jquery-script.js        # JavaScript code using jQuery
-│   └── script-contact.js       # JavaScript code for contact form validation
-└── assets/                     # Folder for static resources
-└── images/                 # Images for README.md and the website
+│  
+├── script.js               
+│  
+├── jquery-script.js        
+│   
+└── script-contact.js       
+└── assets/                    
+└── images/                 
 
 ├── main-page.png
 
 ├── contact-page.png
 └── interactive-elements.png
+
+## Technologies Used
+-   **HTML5:** For structuring the web content.
+-   **CSS3:** For styling and visual presentation.
+-   **JavaScript (Vanilla JS):** For core interactivity, DOM manipulation, and API integration.
+-   **jQuery:** A fast, small, and feature-rich JavaScript library for simplified DOM traversal and manipulation, event handling, animation, and Ajax.
+-   **Bootstrap 5:** A popular CSS framework for responsive and mobile-first front-end web development.
+-   **Font Awesome:** For scalable vector icons.
+-   **JSONPlaceholder API:** A free fake API for testing and prototyping.
 
 
 ## How to Run the Project Locally
