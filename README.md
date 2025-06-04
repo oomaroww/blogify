@@ -1,7 +1,7 @@
-# Blogife - Life Moments Sharing Platform
+# Blogify - Life Moments Sharing Platform
 
 ## Project Description
-Blogife is a modern blog platform allowing users to publish articles, read posts, leave comments, and explore content by category. This project is developed as a demonstration of HTML, CSS, and JavaScript skills, including the use of the jQuery library and integration with external APIs.
+Blogify is a modern blog platform allowing users to publish articles, read posts, leave comments, and explore content by category. This project is developed as a demonstration of HTML, CSS, and JavaScript skills, including the use of the jQuery library and integration with external APIs.
 
 ## Demonstration (Screenshots)
 
